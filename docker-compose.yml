@@ -217,3 +217,19 @@ services:
       interval: 5s
       timeout: 1s
       retries: 5
+
+  kafka-exporter:
+    image: danielqsj/kafka-exporter:v1.4.2
+    hostname: kafka-exporter
+    container_name: kafka-exporter
+    command: --kafka.server=192.168.3.41:9092 --kafka.server=192.168.3.42:9092 --kafka.server=192.168.3.11:9092
+    deploy:
+      placement:
+        constraints: [node.labels.hostip == 192.168.3.11]
+    networks:
+      - net
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "3"
