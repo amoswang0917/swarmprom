@@ -9,7 +9,7 @@
 # 更新
 # docker stack deploy -c docker-compose.yml gaas-monitor
 # 刪除
-# docker stack rm amostest
+# docker stack rm gaas-monitor
 
 version: "3.3"
 
