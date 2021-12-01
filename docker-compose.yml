@@ -224,6 +224,9 @@ services:
     container_name: kafka-exporter
     command: --kafka.server=192.168.3.41:9092 --kafka.server=192.168.3.42:9092 --kafka.server=192.168.3.11:9092
     deploy:
+      # resources:
+      #   limits:
+      #     memory: 16384M
       placement:
         constraints: [node.labels.hostip == 192.168.3.11]
     networks:

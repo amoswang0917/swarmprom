@@ -1,14 +1,19 @@
-remote_write:
-- url: https://cloud.weave.works/api/prom/push
-  basic_auth:
-    #password: <token>#
-
 global:
   scrape_interval:     15s
   evaluation_interval: 15s
 
   external_labels:
     monitor: 'promswarm'
+
+rule_files:
+  - "swarm_node.rules.yml"
+  - "swarm_task.rules.yml"
+
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+      - alertmanager:9093
 
 scrape_configs:
   - job_name: 'prometheus'
@@ -42,3 +47,5 @@ scrape_configs:
       - 'tasks.kafka-exporter'
       type: 'A'
       port: 9308
+
+
