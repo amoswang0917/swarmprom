@@ -1,3 +1,16 @@
+# 安裝啟動改以下餐醋
+# ADMIN_USER=admin 
+# ADMIN_PASSWORD=admin 
+# SLACK_URL=https://hooks.slack.com/services/TOKEN 
+# SLACK_CHANNEL=devops-alerts 
+# SLACK_USER=alertmanager 
+# 啟動
+# docker stack deploy -c docker-compose.yml gaas-monitor
+# 更新
+# docker stack deploy -c docker-compose.yml gaas-monitor
+# 刪除
+# docker stack rm amostest
+
 version: "3.3"
 
 networks:
@@ -78,8 +91,8 @@ services:
       mode: replicated
       replicas: 1
       placement:
-        constraints:
-          - node.role == manager
+        constraints: [node.labels.hostip == 192.168.3.11]
+          # - node.role == manager
       resources:
         limits:
           memory: 128M
@@ -103,8 +116,8 @@ services:
       mode: replicated
       replicas: 1
       placement:
-        constraints:
-          - node.role == manager
+        constraints: [node.labels.hostip == 192.168.3.11]
+          # - node.role == manager
       resources:
         limits:
           memory: 128M
@@ -165,8 +178,8 @@ services:
       mode: replicated
       replicas: 1
       placement:
-        constraints:
-          - node.role == manager
+        constraints: [node.labels.hostip == 192.168.3.11]
+          # - node.role == manager
       resources:
         limits:
           memory: 2048M
@@ -192,8 +205,8 @@ services:
       mode: replicated
       replicas: 1
       placement:
-        constraints:
-          - node.role == manager
+        constraints: [node.labels.hostip == 192.168.3.11]
+          # - node.role == manager
       resources:
         limits:
           memory: 128M
