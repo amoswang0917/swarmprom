@@ -160,7 +160,7 @@ services:
           memory: 64M
 
   prometheus:
-    image: stefanprodan/swarmprom-prometheus:v2.5.0
+    image: gitlab.bcowtech.de:5050/bcow/ops/docker-hub:prometheus-gaas.v0.0.1
     networks:
       - net
     command:
