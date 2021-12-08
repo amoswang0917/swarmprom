@@ -13,10 +13,15 @@
 
 version: "3.3"
 
+# networks:
+#   net:
+#     driver: overlay
+#     attachable: true
+
 networks:
   net:
-    driver: overlay
-    attachable: true
+    external:
+      name: host
 
 volumes:
     prometheus: {}
