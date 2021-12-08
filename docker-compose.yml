@@ -245,7 +245,7 @@ services:
     command:
       - '--es.uri=http://192.168.3.51:9200'
     ports:
-      - "127.0.0.1:9114:9114"
+      - "9114:9114"
     deploy:
       # resources:
       #   limits:
@@ -264,7 +264,7 @@ services:
     command:
       - '--es.uri=http://192.168.3.54:9200'
     ports:
-      - "127.0.0.1:9114:9114"
+      - "9114:9114"
     deploy:
       # resources:
       #   limits:
