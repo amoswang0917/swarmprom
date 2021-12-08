@@ -223,6 +223,7 @@ services:
     hostname: kafka-exporter
     container_name: kafka-exporter
     command: --kafka.server=192.168.3.41:9092 --kafka.server=192.168.3.42:9092 --kafka.server=192.168.3.11:9092
+    restart: always
     deploy:
       # resources:
       #   limits:
@@ -231,6 +232,47 @@ services:
         constraints: [node.labels.hostip == 192.168.3.11]
     networks:
       - net
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "3"
+
+  elasticsearch_exporter_gamebiz:
+    image: quay.io/prometheuscommunity/elasticsearch-exporter:latest
+    hostname: elasticsearch-gamebiz-exporter
+    container_name: elasticsearch-gamebiz-exporter
+    command:
+      - '--es.uri=http://192.168.3.51:9200'
+    restart: always
+    networks:
+      - net
+    deploy:
+      # resources:
+      #   limits:
+      #     memory: 16384M
+      placement:
+        constraints: [node.labels.hostip == 192.168.3.51]
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "3"
+  elasticsearch_exporter_log:
+    image: quay.io/prometheuscommunity/elasticsearch-exporter:latest
+    hostname: elasticsearch-log
+    container_name: elasticsearch-log
+    command:
+      - '--es.uri=http://192.168.3.54:9200'
+    restart: always
+    networks:
+      - net
+    deploy:
+      # resources:
+      #   limits:
+      #     memory: 16384M
+      placement:
+        constraints: [node.labels.hostip == 192.168.3.54]
     logging:
       driver: "json-file"
       options:
