@@ -160,7 +160,7 @@ services:
           memory: 64M
 
   prometheus:
-    image: gitlab.bcowtech.de:5050/bcow/ops/docker-hub:prometheus-gaas.v0.0.1
+    image: gitlab.bcowtech.de:5050/bcow/ops/docker-hub:prometheus-gaas.v0.0.2
     networks:
       - net
     command:
