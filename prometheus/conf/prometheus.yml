@@ -48,10 +48,17 @@ scrape_configs:
       type: 'A'
       port: 9308
 
-  - job_name: 'elasticsearch-exporter'
+  - job_name: 'elasticsearch-exporter-gamebiz'
     dns_sd_configs:
     - names:
-      - 'tasks.elasticsearch-exporter'
+      - 'tasks.elasticsearch-exporter-gamebiz'
+      type: 'A'
+      port: 9114
+  
+  - job_name: 'elasticsearch-exporter-log'
+    dns_sd_configs:
+    - names:
+      - 'tasks.elasticsearch-exporter-log'
       type: 'A'
       port: 9114
 
