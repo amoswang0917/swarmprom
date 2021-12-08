@@ -250,7 +250,7 @@ services:
       - '--es.shards'
       - '--es.snapshots'
       - '--es.timeout=10s'
-      - '--web.telemetry-path="/metrics"'
+      # - '--web.telemetry-path="/metrics"'
     # ports:
     #   - "9114:9114"
     networks:
@@ -277,7 +277,7 @@ services:
       - '--es.shards'
       - '--es.snapshots'
       - '--es.timeout=10s'
-      - '--web.telemetry-path="/metrics"'
+      # - '--web.telemetry-path="/metrics"'
     # ports:
     #   - "9114:9114"
     networks:
