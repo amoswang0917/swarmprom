@@ -247,7 +247,7 @@ services:
     ports:
       - "9114:9114"
     networks:
-      - net
+      - hostnet
     deploy:
       # resources:
       #   limits:
@@ -268,7 +268,7 @@ services:
     ports:
       - "9114:9114"
     networks:
-      - net
+      - hostnet
     deploy:
       # resources:
       #   limits:
