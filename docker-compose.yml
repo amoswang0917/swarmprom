@@ -246,6 +246,8 @@ services:
       - '--es.uri=http://192.168.3.51:9200'
     ports:
       - "9114:9114"
+    networks:
+      - net
     deploy:
       # resources:
       #   limits:
@@ -265,6 +267,8 @@ services:
       - '--es.uri=http://192.168.3.54:9200'
     ports:
       - "9114:9114"
+    networks:
+      - net
     deploy:
       # resources:
       #   limits:
