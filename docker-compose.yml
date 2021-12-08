@@ -193,6 +193,7 @@ services:
       - "9090:9090"
       - "9093:9093"
       - "9094:9094"
+      - "9114:9114"
     networks:
       - net
     environment:
@@ -254,8 +255,8 @@ services:
       - '--web.telemetry-path="/metrics"'
     networks:
       - net
-    ports:
-      - "9114:9114"
+    # ports:
+    #   - "9114:9114"
     deploy:
       # resources:
       #   limits:
