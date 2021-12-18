@@ -105,6 +105,11 @@ services:
     image: grafana/grafana-image-renderer:latest
     ports:
       - "8083:8081"
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints: [node.labels.hostip == 192.168.3.11]
   alertmanager:
     image: stefanprodan/swarmprom-alertmanager:v0.14.0
     networks:
