@@ -78,8 +78,8 @@ services:
       - GF_SECURITY_ADMIN_USER=${ADMIN_USER:-admin}
       - GF_SECURITY_ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin}
       - GF_USERS_ALLOW_SIGN_UP=false
-      - GF_RENDERING_SERVER_URL=http://renderer:8083/render
-      - GF_RENDERING_CALLBACK_URL-http://grafana:3000/
+      # - GF_RENDERING_SERVER_URL=http://renderer:8083/render
+      # - GF_RENDERING_CALLBACK_URL-http://grafana:3000/
       #- GF_SERVER_ROOT_URL=${GF_SERVER_ROOT_URL:-localhost}
       #- GF_SMTP_ENABLED=${GF_SMTP_ENABLED:-false}
       #- GF_SMTP_FROM_ADDRESS=${GF_SMTP_FROM_ADDRESS:-grafana@test.com}
@@ -101,17 +101,17 @@ services:
         reservations:
           memory: 64M
   
-  renderer:
-    image: grafana/grafana-image-renderer:latest
-    networks:
-      - net
-    ports:
-      - "8083:8081"
-    deploy:
-      mode: replicated
-      replicas: 1
-      placement:
-        constraints: [node.labels.hostip == 192.168.3.11]
+  # renderer:
+  #   image: grafana/grafana-image-renderer:latest
+  #   networks:
+  #     - net
+  #   ports:
+  #     - "8083:8081"
+  #   deploy:
+  #     mode: replicated
+  #     replicas: 1
+  #     placement:
+  #       constraints: [node.labels.hostip == 192.168.3.11]
   alertmanager:
     image: stefanprodan/swarmprom-alertmanager:v0.14.0
     networks:
