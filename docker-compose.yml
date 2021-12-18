@@ -103,6 +103,8 @@ services:
   
   renderer:
     image: grafana/grafana-image-renderer:latest
+    networks:
+      - net
     ports:
       - "8083:8081"
     deploy:
