@@ -93,7 +93,7 @@ services:
       mode: replicated
       replicas: 1
       placement:
-        constraints: [node.labels.hostip == 192.168.3.11]
+        constraints: [node.labels.hostip == 192.168.3.62]
           # - node.role == manager
       resources:
         limits:
@@ -111,7 +111,7 @@ services:
   #     mode: replicated
   #     replicas: 1
   #     placement:
-  #       constraints: [node.labels.hostip == 192.168.3.11]
+  #       constraints: [node.labels.hostip == 192.168.3.62]
   alertmanager:
     image: stefanprodan/swarmprom-alertmanager:v0.14.0
     networks:
@@ -129,7 +129,7 @@ services:
       mode: replicated
       replicas: 1
       placement:
-        constraints: [node.labels.hostip == 192.168.3.11]
+        constraints: [node.labels.hostip == 192.168.3.62]
           # - node.role == manager
       resources:
         limits:
@@ -191,7 +191,7 @@ services:
       mode: replicated
       replicas: 1
       placement:
-        constraints: [node.labels.hostip == 192.168.3.11]
+        constraints: [node.labels.hostip == 192.168.3.62]
           # - node.role == manager
       resources:
         limits:
@@ -218,7 +218,7 @@ services:
       mode: replicated
       replicas: 1
       placement:
-        constraints: [node.labels.hostip == 192.168.3.11]
+        constraints: [node.labels.hostip == 192.168.3.62]
           # - node.role == manager
       resources:
         limits:
@@ -241,7 +241,7 @@ services:
       #   limits:
       #     memory: 16384M
       placement:
-        constraints: [node.labels.hostip == 192.168.3.11]
+        constraints: [node.labels.hostip == 192.168.3.62]
     networks:
       - net
     logging:
@@ -270,7 +270,7 @@ services:
       - net
     deploy:
       placement:
-        constraints: [node.labels.hostip == 192.168.3.11]
+        constraints: [node.labels.hostip == 192.168.3.62]
     logging:
       driver: "json-file"
       options:
@@ -297,7 +297,7 @@ services:
       - net
     deploy:
       placement:
-        constraints: [node.labels.hostip == 192.168.3.11]
+        constraints: [node.labels.hostip == 192.168.3.62]
     logging:
       driver: "json-file"
       options:
