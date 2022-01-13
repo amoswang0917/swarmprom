@@ -11,6 +11,8 @@
 # 刪除
 # docker stack rm gaas-monitor
 
+# 儀表板  6483  7589
+
 version: "3.3"
 
 networks:
