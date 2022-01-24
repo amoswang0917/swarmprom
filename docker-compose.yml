@@ -197,9 +197,9 @@ services:
           # - node.role == manager
       resources:
         limits:
-          memory: 3072M
+          memory: 4096M
         reservations:
-          memory: 512M
+          memory: 1024M
 
   caddy:
     image: stefanprodan/caddy
